@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import math
-
 """
 题目名称：二进制加1
 
@@ -20,6 +18,7 @@ import math
     方法2：先转换为10进制，求和后，在转换为二进制
 """
 
+import math
 class Solution:
     def addBinary(self, a, b):
         """

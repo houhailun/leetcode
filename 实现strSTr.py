@@ -57,5 +57,6 @@ class Solution:
                 return x-len_needle
         return -1
 
+
 cls = Solution()
 print(cls.strStr("mississippi", "issip"))

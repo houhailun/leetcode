@@ -17,7 +17,7 @@ class Solution:
         :type x: int
         :rtype: int
         """
-        # # leetcode上通过，但是IDE编译失败：RuntimeWarning: overflow encountered in int_scalars
+        # leetcode上通过，但是IDE编译失败：RuntimeWarning: overflow encountered in int_scalars
         '''
         if x < np.power(-2, 31) or x > np.power(2, 31)-1:
             return 0

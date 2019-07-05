@@ -82,8 +82,6 @@ class Solution:
         return slow + 1
 
 
-
-
 cls = Solution()
 a = [1,2,2,3]
 print(cls.removeDuplicates_v3(a))

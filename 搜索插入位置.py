@@ -27,7 +27,7 @@ class Solution:
         :rtype: int
         """
         '''
-        # 方法1：利用python的index,append,sort函数，时间复杂度为O(NlogN)
+        方法1：利用python的index,append,sort函数，时间复杂度为O(NlogN)
         if target in nums:
             return nums.index(target)
         nums.append(target)

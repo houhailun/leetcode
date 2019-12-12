@@ -44,6 +44,7 @@ class Solution(object):
             else:  # 当前字符有重复，则更新tmp(只要最左边重复字符+1开始到末尾的子串)
                 tmp += ch
                 tmp = tmp[tmp.index(ch) + 1:]  # 剔除最左边的重复字符
+        return length
 
     def lengthOfLongestSubstring(self, s):
         """

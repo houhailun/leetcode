@@ -33,9 +33,10 @@ class MinStack:
     def push(self, x):
         self.data_stack.append(x)
 
+        # 最初，数据栈和辅助栈同时入栈
         if not self.min_stack:
             self.min_stack.append(x)
-        else:
+        else:  # 后续入栈，把min(x, 当前最小值)压入辅助栈
             if self.min_stack[-1] > x:
                 self.min_stack.append(x)
             else:

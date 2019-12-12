@@ -43,4 +43,4 @@ class Solution(object):
         ret.extend(nums)
         for i in range(2, nums_len):
             for j in range(nums_len-i+1):
-                
+

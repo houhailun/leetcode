@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+# Time: 2019/9/10 16:31
+# Author: Hou hailun、
 
 """
 题目名称：最后一个单词的长度
@@ -11,9 +13,8 @@
 输入: "Hello World"
 输出: 5
 
-解题思路：
+解题思路：利用split对空格进行切分，直接len(最后一个单词)
 """
-
 
 class Solution:
     def lengthOfLastWord(self, s):
@@ -21,33 +22,9 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        # 48ms
         if not s:
             return 0
         li = s.split()
         if not li:
             return 0
-        return len(li[-1])
-
-    # 别人的代码:32ms
-    def lengthOfLastWord_v2(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        result = 0
-        if len(s) < 1:
-            result = 0
-        elif not s.split():
-            result = 0
-        else:
-            l = []
-            l = s.split()
-            l.reverse()
-            result = len(l[0])
-        return result
-
-
-
-cls = Solution()
-print(cls.lengthOfLastWord('hello world'))
+        return len(s.split()[-1])

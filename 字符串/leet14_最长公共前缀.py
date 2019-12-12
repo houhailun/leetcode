@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+# Time: 2019/9/10 15:52
+# Author: Hou hailun
 
 """
 题目名称：最长公共前缀
@@ -21,37 +23,40 @@
 """
 
 
-class Solution:
+class Solution(object):
     def longestCommonPrefix(self, strs):
         """
         :type strs: List[str]
         :rtype: str
         """
-        # 异常检查
-        if not strs:
-            return ""
-        if len(strs) == 1:
-            return strs[0]
-
-        # 找到最短的字符串，只需要找到最短字符串的长度即可
-        min_str = min([len(x) for x in strs])
-        ix = 0  # 标记公共前缀的字符个数
-        length = len(strs)
-        while ix < min_str:
-            # 遍历列表，逐个匹配
-            for i in range(1, length):
-                if strs[i][ix] != strs[i-1][ix]:
-                    return strs[0][:ix]
-            ix += 1
-        return strs[0][:ix]  # 用时48ms
+        # # 异常检查
+        # if strs is None:
+        #     return ""
+        # if len(strs) == 1:
+        #     return strs[0]
+        #
+        # # 找到最短的字符串，只需要找到最短字符串的长度即可
+        # min_str = min([len(x) for x in strs])
+        # ix = 0  # 标记公共前缀的字符个数
+        # length = len(strs)
+        # while ix < min_str:
+        #     # 遍历列表，逐个匹配
+        #     for i in range(1, length):
+        #         if strs[i][ix] != strs[i - 1][ix]:
+        #             return strs[0][:ix]
+        #     ix += 1
+        # return strs[0][:ix]  # 用时48ms
 
         # 大神的代码  36ms
         shorest = min(strs, key=len)  # 长度最短的字串
+        print(shorest)
         for i, ch in enumerate(shorest):
             for other in strs:
                 if other[i] != ch:
                     return shorest[:i]
         return shorest
 
-cls = Solution()
-print(cls.longestCommonPrefix(['flow', 'floss', 'flcccc']))
+
+if __name__ == "__main__":
+    obj = Solution()
+    print(obj.longestCommonPrefix(["flower","flow","flight"]))

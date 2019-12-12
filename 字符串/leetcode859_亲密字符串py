@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Time: 2019/9/20 13:20
+# Author: Hou hailun
+
+"""
+给定两个由小写字母构成的字符串 A 和 B ，只要我们可以通过交换 A 中的两个字母得到与 B 相等的结果，就返回 true ；否则返回 false 。
+示例 1：
+输入： A = "ab", B = "ba"
+输出： true
+示例 2：
+输入： A = "ab", B = "ab"
+输出： false
+示例 3:
+输入： A = "aa", B = "aa"
+输出： true
+示例 4：
+输入： A = "aaaaaaabc", B = "aaaaaaacb"
+输出： true
+示例 5：
+输入： A = "", B = "aa"
+输出： false
+"""
+
+class Solution:
+    def buddyStrings(self, A, B):
+        """
+        :type A: str
+        :type B: str
+        :rtype: bool
+        """
+        # case1：两个字符串长度不相等，则必然非亲密
+        # case2：两个字符串相等，且有重复元素，则为亲密
+        # case3：A,B字符串中按顺序不相等对数只能为2对，且要求对称
+        if len(A) != len(B):
+            return False
+
+        if A == B and len(set(A)) < len(A):
+            return True
+
+        # 找到A，B中所有不同的字符对
+        dif = [(a, b) for a, b in zip(A, B) if a != b]
+
+        # A,B中不同的字符对数只能为2，并且必须是对称，如 (a,b)与(b,a)
+        return len(dif) == 2 and dif[0] == dif[1][::-1]

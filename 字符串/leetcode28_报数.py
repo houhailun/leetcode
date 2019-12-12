@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-
+# Time: 2019/9/10 16:22
+# Author: Hou hailun
 
 """
 题目名称：报数
@@ -59,7 +60,3 @@ class Solution:
             res += str(cnt)+pre[j]
             pre = res  # 保存上一项的结果
         return res
-
-
-cls = Solution()
-print(cls.countAndSay(8))

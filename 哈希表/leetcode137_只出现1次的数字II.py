@@ -20,6 +20,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # 方法1：数学公式
-        x = set(nums)
-        return (3*sum(x) - sum(nums)) / 2
+        # # 方法1：数学公式
+        # x = set(nums)
+        # return (3*sum(x) - sum(nums)) / 2
+
+        # 方法2：哈希表
+        hash_table = {}
+        for num in nums:
+            if num not in hash_table:
+                hash_table[num] = 1
+            else:
+                hash_table[num] += 1
+
+        for ix, num in hash_table.items():
+            if num == 1:
+                return ix
+        return None

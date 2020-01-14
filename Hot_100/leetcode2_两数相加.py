@@ -30,7 +30,7 @@ class Solution(object):
         # 需要记录是否进位 carry = res / 10, 记录余数res % 10;
         # 遍历链表，判断是否进位；无进位则直接累计后写到新链表；
         # 有进位则把余数写到新链表位置，然后针对2个链表的后一位数据和进位相加
-        new_head = ListNode(0)
+        new_head = ListNode(0)  # 头节点
         cur_node = new_head
         carry = 0
         while l1 or l2:
@@ -38,8 +38,8 @@ class Solution(object):
             y = l2.val if l2 else 0
             res = x + y + carry
 
-            carry = res // 10
-            node = ListNode(res % 10)
+            carry = res // 10          # 进位
+            node = ListNode(res % 10)  # 余数
             cur_node.next = node
             cur_node = cur_node.next
 

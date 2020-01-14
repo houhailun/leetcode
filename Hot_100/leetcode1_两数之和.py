@@ -55,12 +55,12 @@ class Solution(object):
         return []
 
     def twoSum_hash_once(self, nums, target):
-        # 遍历一次哈希表，在迭代并构建哈希表的同时检查是否有目标元素
+        # 遍历一次，在迭代并构建哈希表的同时检查是否有目标元素
         hash_table = {}
         for ix, num in enumerate(nums):
             res = target - num
-            if res in hash_table.values():
-                res_ix = num.index(res)
+            if res in hash_table.values():  # res 如果在哈希表中，说明可能存在两数之和等于目标值
+                res_ix = num.index(res)     # 判断是否是由于同一个值
                 if res_ix != ix:
                     return [res_ix, ix]
             hash_table[ix] = num

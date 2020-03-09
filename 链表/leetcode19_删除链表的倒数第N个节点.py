@@ -60,6 +60,7 @@ class Solution(object):
             if fast:
                 fast = fast.next
 
+        # 如果链表长度等于n，则表示删除第一个节点
         if fast is None:
             return head.next
 

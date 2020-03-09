@@ -60,11 +60,11 @@ class Solution(object):
         for ix, num in enumerate(nums):
             res = target - num
             if res in hash_table.values():  # res 如果在哈希表中，说明可能存在两数之和等于目标值
-                res_ix = num.index(res)     # 判断是否是由于同一个值
+                res_ix = nums.index(res)     # 判断是否是由于同一个值
                 if res_ix != ix:
                     return [res_ix, ix]
             hash_table[ix] = num
         return []
 
 obj = Solution()
-print(obj.twoSum([2, 7, 11, 15], 9))
+print(obj.twoSum_hash_once([2, 7, 11, 15], 9))

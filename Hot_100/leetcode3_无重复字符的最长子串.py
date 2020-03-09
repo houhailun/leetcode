@@ -11,17 +11,27 @@ class Solution(object):
         # 非重复：ch添加到tmp中，并更新max_len
         # 重复：ch添加到tmp中，并把第一个ch剔除
 
-        tmp = ''
+        # tmp = ''
+        # max_len = 0
+        # for ch in s:
+        #     if ch not in tmp:
+        #         tmp += ch
+        #         max_len = max(max_len, len(tmp))
+        #     else:
+        #         tmp += ch
+        #         tmp = tmp[tmp.index(ch)+1:]
+        # return max_len
+
+        res = ""
         max_len = 0
         for ch in s:
-            if ch not in tmp:
-                tmp += ch
-                max_len = max(max_len, len(tmp))
+            res += ch
+            if ch not in res:
+                max_len = max(max_len, len(res))
             else:
-                tmp += ch
-                tmp = tmp[tmp.index(ch)+1:]
+                res = res[res.index(ch) + 1:]
         return max_len
 
 
 obj = Solution()
-print(obj.lengthOfLongestSubstring('abcabcbb'))
+print(obj.lengthOfLongestSubstring('"abcabcbb"'))

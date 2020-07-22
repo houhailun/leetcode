@@ -28,7 +28,7 @@ class Solution(object):
         #
         # return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 
-        # 方法二：迭代版本
+        # 方法二：迭代版本, 层序遍历
         if not root:
             return 0
         ans, count = [root], 1

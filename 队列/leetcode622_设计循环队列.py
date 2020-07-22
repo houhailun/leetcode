@@ -81,12 +81,12 @@ class MyCircularQueue(object):
 
 
 # Your MyCircularQueue object will be instantiated and called as such:
-# obj = MyCircularQueue(k)
-# param_1 = obj.enQueue(value)
-# param_2 = obj.deQueue()
-# param_3 = obj.Front()
-# param_4 = obj.Rear()
-# param_5 = obj.isEmpty()
-# param_6 = obj.isFull()
+obj = MyCircularQueue(10)
+param_1 = obj.enQueue(7)
+param_2 = obj.deQueue()
+param_3 = obj.Front()
+param_4 = obj.Rear()
+param_5 = obj.isEmpty()
+param_6 = obj.isFull()
 
 print(param_1, param_2, param_3, param_4, param_5, param_6)

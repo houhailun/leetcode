@@ -25,7 +25,8 @@ class Solution(object):
         :rtype: bool
         """
         # 利用替换思想：把括号替换为空串，如果括号匹配，则最后必然等于空串
-        return isValid_v1(s)
+        # return self.isValid_v1(s)
+        return self.isValid_v2(s)
 
     def isValid_v1(self, s):
         while '{}' in s or '[]' in s or '()' in s:
@@ -50,3 +51,7 @@ class Solution(object):
                 stack.append(char)  # 入栈
 
         return not stack
+
+
+obj = Solution()
+print(obj.isValid("{[()]}"))

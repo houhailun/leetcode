@@ -23,9 +23,11 @@
 
 # 思路：初始子集只有[], 从前往后遍历，遇到一个数就把所有子集加上该数组成新的子集，遍历完毕即是所有子集
 # [] -> [],[1] -> [],[1],[2],[1,2] -> [],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]
+import pysnooper
 
 
 class Solution:
+    # @pysnooper.snoop()
     def subsets(self, nums):
         """
         :type nums: List[int]
@@ -37,16 +39,11 @@ class Solution:
 
         res.append([])
         for num in nums:
-            print('num:', num)
-            for tmp in res:
-                if isinstance(tmp, list):
-                    print('-----tmp--------', tmp)
-                    sub = tmp.append(num)
-                    print('-----sub----', sub)
-                    res.append(sub)
-        print(res)
+            new = [s + [num] for s in res]
+            res = res + new
         return res
 
 
 obj = Solution()
-ret = obj.subsets([1, 2])
+ret = obj.subsets([1, 2, 3])
+print(ret)

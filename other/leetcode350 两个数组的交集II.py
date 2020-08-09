@@ -70,4 +70,4 @@ class Solution_ii:
 
 if __name__ == "__main__":
     cls = Solution_ii()
-    print(cls.intersection([1,2,2,1], [2,2]))
+    print(cls.intersection([4,9,5], [9,4,9,8,4]))

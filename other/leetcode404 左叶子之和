@@ -31,7 +31,7 @@ class Solution(object):
         # 分为左子树查找和右子树查找，前序遍历
         if not root:
             return 0
-        # root存在左叶子节点
+        # root存在左叶子节点:root.left是
         if root.left and root.left.left is None and root.left.right is None:
             return root.left.val + self.sumOfLeftLeaves(root.right)
         else:

@@ -31,7 +31,6 @@ class Solution(object):
         low, high = 0, len(nums) - 1
         while low <= high:
             mid = (low + high) // 2
-            print('low:%s,high:%s,mid:%s', low, high, mid)
             if nums[mid] == target:
                 first = last = mid
                 print(mid, nums[mid])

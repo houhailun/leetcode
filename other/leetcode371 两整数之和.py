@@ -37,4 +37,4 @@ class Solution(object):
         return sum
 
 cls = Solution()
-print(cls.getSum(-1, 1))
+print(cls.getSum(7, 2))

@@ -37,10 +37,12 @@ class Solution(object):
         sum = len(nums)
         for i in range(len(nums)):
             sum += i
+            print(sum)
             sum -= nums[i]
+            print(sum)
         return sum
 
 
 obj = Solution()
-ret = obj.missingNumber([3,1,2])
+ret = obj.missingNumber([3,1,0])
 print(ret)

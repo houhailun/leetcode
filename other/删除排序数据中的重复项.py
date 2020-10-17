@@ -84,5 +84,5 @@ class Solution:
 
 cls = Solution()
 a = [1,2,2,3]
-print(cls.removeDuplicates_v3(a))
+print(cls.removeDuplicates(a))
 print(a)

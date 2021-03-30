@@ -32,16 +32,35 @@ class Solution(object):
         # return self.maxProfit_v1(prices)
 
         # 方法2：
+        return self.best_algo(prices)
+
+        # 方法3: 动态规划
+        # self.maxProfit_dp(prices)
+
+    def best_algo(self, prices):
         # min_price: 迄今为止所得到的最小的谷值
         # max_profit: 迄今为止最大的利润（卖出价格与最低价格之间的最大差值)
         min_price = 999999
         max_profit = 0
-        for price in prices:
+        sell_ix = 0
+        buy_ix = 0
+        for ix, price in enumerate(prices):
             if price < min_price:
                 min_price = price
             elif max_profit < price-min_price:
                 max_profit = price-min_price
-        return max_profit
+                sell_ix = ix
+        buy_ix = prices.index(min(prices[0:sell_ix]))  # 买入日: 在销售日前最小价格对应日
+        return max_profit, buy_ix, sell_ix
+
+    def maxProfit_dp(self, prices):
+        # dp[i] 表示第i天出售股票,所得到的最大收益
+        # dp[i] = max(dp[i-1], prices[i] - min(prices[0:i]))
+        dp = [0]
+        for i in range(1, len(prices)):
+            dp.append(max(dp[i-1], prices[i] - min(prices[0:i])))
+        return max(dp)
+
 
     def maxProfit_v1(self, prices):
         # 在需要找出给定数组中两个数字之间的最大差值（即，最大利润）。此外，第二个数字（卖出价格）必须大于第一个数字
@@ -53,3 +72,8 @@ class Solution(object):
                 if profits > max_profits:
                     max_profits = profits
         return max_profits
+
+
+obj = Solution()
+print(obj.maxProfit([7,1,5,3,6,4]))
+print(obj.maxProfit([2, 6, 4, 1, 3, 4]))

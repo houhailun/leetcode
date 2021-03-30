@@ -35,7 +35,7 @@ class Solution:
             return None
 
         flag = False
-        for i in range(len(nums) - 1, 0, -1):
+        for i in range(len(nums) - 1, 0, -1):  # 从后往前查找
             # 存在下一个大的排列
             if nums[i] > nums[i - 1]:
                 s = sorted(nums[i:])  # 对i后面的元素排序

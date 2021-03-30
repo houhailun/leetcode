@@ -54,4 +54,4 @@ class Solution:
 
 
 cls = Solution()
-print(cls.searchInsert([1,3], 0))
+print(cls.searchInsert([1,3,4,5], 2))

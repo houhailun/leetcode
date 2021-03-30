@@ -41,3 +41,4 @@ class Solution:
 
 cls = Solution()
 print(cls.max_profit([7,1,5,3,6,4]))
+print(cls.max_profit([1,2,3,4,5]))

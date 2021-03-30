@@ -38,18 +38,19 @@ class Solution(object):
 
         max_len = 1
         start = 0
-        for i in range(size):
+        for i in range(size):  # dp[i][i]表示s中的单个字符，是回文串
             dp[i][i] = True
 
+        # i在j前面，j从1开始
         for j in range(1, size):
             for i in range(0, j):
                 if s[i] == s[j]:
-                    if j - i < 3:  # j-1 与 i+1 不构成边界
+                    if j - i < 3:  # j-1 与 i+1 不构成边界(i,i+1,j-1,j)至少需要4个，举例ab, aba
                         dp[i][j] = True
                     else:
                         dp[i][j] = dp[i+1][j-1]
                 else:
-                    dp[i][j] = False
+                    dp[i][j] = False  # s[i] != s[j], 则s[i,j]必然不是回文串
 
                 if dp[i][j]:
                     cur_len = j - i + 1

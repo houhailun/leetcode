@@ -22,7 +22,7 @@ class Solution(object):
         :rtype: int
         """
         # 方法1：动态规划
-        # return self.cuttingRope_do(n)
+        return self.cuttingRope_do(n)
 
         # 方法2：贪心算法n
         return self.cuttingRope_grep(n)

@@ -34,7 +34,8 @@ class Solution(object):
 
         rows = len(board)
         columns = len(board[0])
-        visited = [[0] * columns] * rows
+        # visited = [[0] * columns] * rows
+        visited = [[0 for _ in range(columns)] for _ in range(rows)]
 
         # 矩阵中的所有点都要作为起始点
         for i in range(rows):

@@ -13,7 +13,7 @@
 
 
 class Solution(object):
-    def getSum(self, a, b):
+    def getSum(self, num1, num2):
         """
         :type a: int
         :type b: int
@@ -28,13 +28,16 @@ class Solution(object):
         #     return self.getSum(sum, carry)
         # return sum
 
-        # 循环
-        sum = a
-        carry = b
-        while carry != 0:
-            sum = sum ^ carry
-            carry = (sum & carry) << 1
-        return sum
+        if num1 == 0 or num2 == 0:
+            return num1 or num2
+
+        while num2:
+            _sum = num1 ^ num2
+            carry = (num1 & num2) << 1  # 进位左移
+
+            num1 = _sum
+            num2 = carry
+        return num1
 
 cls = Solution()
 print(cls.getSum(7, 2))
